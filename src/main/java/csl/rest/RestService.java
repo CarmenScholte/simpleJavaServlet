@@ -23,4 +23,5 @@ public class RestService {
 
         return new ResponseEntity<>("Hello from the REST service!", HttpStatus.OK);
     }
+
 }
