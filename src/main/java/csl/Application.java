@@ -1,5 +1,6 @@
 package csl;
 
+import csl.database.DatabaseHelper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,8 +17,10 @@ public class Application {
         return "Simple Java Servlet by CSL";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(Application.class, args);
+
+        DatabaseHelper.createTable();
     }
 
 }
