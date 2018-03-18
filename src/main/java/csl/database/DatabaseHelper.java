@@ -32,10 +32,8 @@ public class DatabaseHelper {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "admin");
             Statement statement = conn.createStatement();
-            boolean worked = statement.execute("create table food (id int, name varchar(225))");
-            if (worked) {
-                LOGGER.info("Table created: food on test database");
-            }
+            statement.execute("create table food (id int, name varchar(225))");
+            LOGGER.info("Table created: food on test database");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
